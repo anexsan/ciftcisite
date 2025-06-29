@@ -1,0 +1,56 @@
+<section class="container">
+    <h1>Sipariş Takibi</h1>
+    
+    <div class="order-tracking">
+        <form id="track-order-form">
+            <div class="form-group">
+                <label for="order-number">Sipariş Numarası</label>
+                <input type="text" id="order-number" required placeholder="Örneğin: ORD123456">
+            </div>
+            <div class="form-group">
+                <label for="order-email">E-posta Adresi</label>
+                <input type="email" id="order-email" required>
+            </div>
+            <button type="submit" class="button">Siparişi Sorgula</button>
+        </form>
+        
+        <div id="order-status" style="display:none;">
+            <h2>Sipariş Durumu</h2>
+            <div class="status-timeline">
+                <div class="status-step active">
+                    <div class="step-icon">✓</div>
+                    <h4>Sipariş Alındı</h4>
+                    <p>15 Mart 2025, 14:30</p>
+                </div>
+                <div class="status-step active">
+                    <div class="step-icon">✓</div>
+                    <h4>Hazırlanıyor</h4>
+                    <p>15 Mart 2025, 16:45</p>
+                </div>
+                <div class="status-step">
+                    <div class="step-icon">2</div>
+                    <h4>Kargoya Verildi</h4>
+                    <p>Bekleniyor</p>
+                </div>
+                <div class="status-step">
+                    <div class="step-icon">3</div>
+                    <h4>Teslim Edildi</h4>
+                    <p>Bekleniyor</p>
+                </div>
+            </div>
+            
+            <div class="order-details">
+                <h3>Sipariş Detayları</h3>
+                <div class="order-items">
+                    <!-- Sipariş ürünleri buraya gelecek -->
+                </div>
+                <div class="order-summary">
+                    <h4>Sipariş Özeti</h4>
+                    <p>Toplam: <span class="price">87.50 TL</span></p>
+                    <p>Kargo: <span class="price">Ücretsiz</span></p>
+                    <p>Genel Toplam: <span class="price">87.50 TL</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,62 @@
+<section class="container">
+    <h1>Ödeme Yöntemi Seçin</h1>
+    
+    <div class="payment-methods">
+        <div class="payment-tabs">
+            <button class="payment-tab active" data-tab="credit-card">Kredi Kartı</button>
+            <button class="payment-tab" data-tab="bank-transfer">Banka Havalesi</button>
+            <button class="payment-tab" data-tab="cash-on-delivery">Kapıda Ödeme</button>
+        </div>
+        
+        <div class="payment-content">
+            <div id="credit-card" class="tab-content active">
+                <form id="credit-card-form">
+                    <div class="form-group">
+                        <label for="card-number">Kart Numarası</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="card-expiry">Son Kullanma Tarihi</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-cvv">CVV</label>
+                            <input type="text" id="card-cvv" placeholder="123" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-name">Kart Üzerindeki İsim</label>
+                        <input type="text" id="card-name" required>
+                    </div>
+                    <button type="submit" class="button">Ödemeyi Tamamla</button>
+                </form>
+            </div>
+            
+            <div id="bank-transfer" class="tab-content">
+                <div class="bank-info">
+                    <h3>Banka Bilgileri</h3>
+                    <p><strong>Banka Adı:</strong> Dijital Çiftçi Bankası</p>
+                    <p><strong>Şube Kodu:</strong> 1234</p>
+                    <p><strong>Hesap No:</strong> 567890123</p>
+                    <p><strong>IBAN:</strong> TR12 3456 7890 1234 5678 9012 34</p>
+                    <p><strong>Alıcı Adı:</strong> Dijital Çiftçi Pazarı A.Ş.</p>
+                    
+                    <div class="notice">
+                        <p>Ödeme yaptıktan sonra dekontu info@dijitalciftcipazari.com adresine gönderiniz.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cash-on-delivery" class="tab-content">
+                <div class="cash-info">
+                    <h3>Kapıda Ödeme</h3>
+                    <p>Siparişiniz kapınıza kadar ulaştırılacak ve teslimat sırasında nakit olarak ödeme yapabileceksiniz.</p>
+                    <p>Kapıda ödeme hizmet bedeli: <strong>5.00 TL</strong></p>
+                    
+                    <button class="button" id="confirm-cash-order">Siparişi Onayla</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

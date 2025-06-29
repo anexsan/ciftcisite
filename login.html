@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Çiftçi Pazarı - Giriş Yap</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Dijital</span> Çiftçi Pazarı</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li class="current"><a href="login.html">Giriş Yap</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="form-container">
+            <h2>Giriş Yap</h2>
+            <form id="user-login">
+                <div class="form-group">
+                    <label for="login-email">E-posta</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Şifre</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="button">Giriş Yap</button>
+                <p>Hesabınız yok mu? <a href="kayit.html">Kayıt Olun</a></p>
+                <p><a href="sifre-sifirla.html">Şifremi Unuttum</a></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hakkımızda</h3>
+                <p>Dijital Çiftçi Pazarı olarak çiftçilerimizle tüketicileri buluşturuyoruz.</p>
+                <button class="button" onclick="window.location.href='hakkimizda.html'">Daha Fazla Bilgi</button>
+            </div>
+            <div class="footer-section">
+                <h3>Ürünlerimiz</h3>
+                <p>Taze ve doğal ürünlerimizi keşfedin.</p>
+                <button class="button" onclick="window.location.href='urunler.html'">Ürünlere Göz At</button>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Bize ulaşın: 220403001@hakkari.edu.tr</p>
+                <button class="button" onclick="window.location.href='iletisim.html'">İletişim Formu</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Dijital Çiftçi Pazarı &copy; 2025 - Tüm Hakları Saklıdır</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

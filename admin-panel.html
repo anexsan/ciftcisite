@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Çiftçi Pazarı - Yönetim Paneli</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Dijital</span> Çiftçi Pazarı</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li class="logout-link"><a href="#" id="logout-btn">Çıkış Yap</a></li>
+                    <li class="current"><a href="admin-panel.html">Yönetim Paneli</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li class="user-profile">
+                        <a href="admin-panel.html">
+                            <img src="images/user.png" alt="Profil" class="user-avatar">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <h1>Yönetim Paneli</h1>
+        
+        <div class="dashboard">
+            <div class="sidebar">
+                <div class="user-info">
+                    <img src="images/user.png" alt="Yönetici" class="user-avatar">
+                    <h3>Admin</h3>
+                    <p>Sistem Yöneticisi</p>
+                </div>
+                
+                <nav class="dashboard-nav">
+                    <a href="#dashboard" class="active"><i class="icon-dashboard"></i> Genel Bakış</a>
+                    <a href="#users"><i class="icon-users"></i> Kullanıcılar</a>
+                    <a href="#farmers"><i class="icon-farmers"></i> Çiftçiler</a>
+                    <a href="#products"><i class="icon-products"></i> Ürünler</a>
+                    <a href="#orders"><i class="icon-orders"></i> Siparişler</a>
+                    <a href="#settings"><i class="icon-settings"></i> Sistem Ayarları</a>
+                </nav>
+            </div>
+            
+            <div class="main-content">
+                <div id="dashboard" class="tab-content active">
+                    <h2>Sistem Genel Bakış</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Toplam Satış</h3>
+                            <p class="stat-value">24,567 TL</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Toplam Sipariş</h3>
+                            <p class="stat-value">342</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Kayıtlı Çiftçi</h3>
+                            <p class="stat-value">56</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Kayıtlı Kullanıcı</h3>
+                            <p class="stat-value">1,234</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="sales-chart"></canvas>
+                    </div>
+                </div>
+                
+                <div id="users" class="tab-content">
+                    <div class="section-header">
+                        <h2>Kullanıcı Yönetimi</h2>
+                        <button class="button" id="add-user">Yeni Kullanıcı Ekle</button>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ad Soyad</th>
+                                    <th>E-posta</th>
+                                    <th>Kayıt Tarihi</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table">
+                                <!-- Kullanıcılar buraya gelecek -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="farmers" class="tab-content">
+                    <div class="section-header">
+                        <h2>Çiftçi Yönetimi</h2>
+                        <button class="button" id="verify-farmers">Onay Bekleyenler</button>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ad Soyad</th>
+                                    <th>E-posta</th>
+                                    <th>Şehir</th>
+                                    <th>Durum</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="farmers-table">
+                                <!-- Çiftçiler buraya gelecek -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Diğer tab içerikleri benzer şekilde eklenecek -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Kullanıcı Ekleme Modalı -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Yeni Kullanıcı Ekle</h2>
+            <form id="add-user-form">
+                <div class="form-group">
+                    <label for="user-type">Kullanıcı Türü</label>
+                    <select id="user-type" required>
+                        <option value="customer">Müşteri</option>
+                        <option value="farmer">Çiftçi</option>
+                        <option value="admin">Yönetici</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="user-name">Ad Soyad</label>
+                    <input type="text" id="user-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-email">E-posta</label>
+                    <input type="email" id="user-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-password">Şifre</label>
+                    <input type="password" id="user-password" required>
+                </div>
+                <div class="form-group" id="farmer-fields" style="display:none;">
+                    <label for="farmer-city">Şehir</label>
+                    <select id="farmer-city">
+                        <!-- Şehirler buraya gelecek -->
+                    </select>
+                </div>
+                <button type="submit" class="button">Kullanıcıyı Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hakkımızda</h3>
+                <p>Dijital Çiftçi Pazarı olarak çiftçilerimizle tüketicileri buluşturuyoruz.</p>
+                <button class="button" onclick="window.location.href='hakkimizda.html'">Daha Fazla Bilgi</button>
+            </div>
+            <div class="footer-section">
+                <h3>Ürünlerimiz</h3>
+                <p>Taze ve doğal ürünlerimizi keşfedin.</p>
+                <button class="button" onclick="window.location.href='urunler.html'">Ürünlere Göz At</button>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Bize ulaşın: 220403001@hakkari.edu.tr</p>
+                <button class="button" onclick="window.location.href='iletisim.html'">İletişim Formu</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Dijital Çiftçi Pazarı &copy; 2025 - Tüm Hakları Saklıdır</p>
+            <p>Emirhan Beyter - 220403001 | Ömer Demir</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="admin-panel.js"></script>
+</body>
+</html>

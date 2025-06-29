@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Çiftçi Pazarı - Ürünler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Dijital</span> Çiftçi Pazarı</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li class="current"><a href="urunler.html">Ürünler</a></li>
+                    <li class="login-link"><a href="login.html">Giriş Yap</a></li>
+                    <li class="logout-link" style="display:none;"><a href="#" id="logout-btn">Çıkış Yap</a></li>
+                    <li class="farmer-link" style="display:none;"><a href="ciftci-panel.html">Çiftçi Paneli</a></li>
+                    <li class="admin-link" style="display:none;"><a href="admin-panel.html">Yönetim</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li class="cart-icon">
+                        <a href="sepet.html">
+                            <img src="images/sepet.png" alt="Sepet">
+                            <span class="cart-count" style="display:none;">0</span>
+                        </a>
+                    </li>
+                    <li class="user-profile" style="display:none;">
+                        <a href="kullanici-panel.html">
+                            <img src="images/user.png" alt="Profil" class="user-avatar">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <h1>Tüm Ürünler</h1>
+        
+        <div class="filter-section">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="category-filter">Kategori:</label>
+                    <select id="category-filter">
+                        <option value="">Tüm Kategoriler</option>
+                        <option value="meyve">Meyve</option>
+                        <option value="sebze">Sebze</option>
+                        <option value="sut">Süt Ürünleri</option>
+                        <option value="bakliyat">Bakliyat</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="city-filter">Şehir:</label>
+                    <select id="city-filter">
+                        <option value="">Tüm Şehirler</option>
+                        <!-- JavaScript ile şehirler eklenecek -->
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sort-filter">Sırala:</label>
+                    <select id="sort-filter">
+                        <option value="price-asc">Fiyat: Artan</option>
+                        <option value="price-desc">Fiyat: Azalan</option>
+                        <option value="name-asc">İsim: A-Z</option>
+                        <option value="name-desc">İsim: Z-A</option>
+                        <option value="popular">Popüler</option>
+                    </select>
+                </div>
+                
+                <button class="button" id="apply-filters">Filtrele</button>
+                <button class="button secondary" id="reset-filters">Sıfırla</button>
+            </div>
+        </div>
+        
+        <div id="all-products" class="product-grid">
+            <!-- JavaScript ile tüm ürünler eklenecek -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hakkımızda</h3>
+                <p>Dijital Çiftçi Pazarı olarak çiftçilerimizle tüketicileri buluşturuyoruz.</p>
+                <button class="button" onclick="window.location.href='hakkimizda.html'">Daha Fazla Bilgi</button>
+            </div>
+            <div class="footer-section">
+                <h3>Çiftçi Misiniz?</h3>
+                <p>Ürünlerinizi satmak için platformumuza katılın.</p>
+                <button class="button" onclick="window.location.href='ciftci-kayit.html'">Çiftçi Kaydı</button>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Bize ulaşın: 220403001@hakkari.edu.tr</p>
+                <button class="button" onclick="window.location.href='iletisim.html'">İletişim Formu</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Dijital Çiftçi Pazarı &copy; 2025 - Tüm Hakları Saklıdır</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Çiftçi Pazarı - Kayıt Ol</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Dijital</span> Çiftçi Pazarı</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="login.html">Giriş Yap</a></li>
+                    <li class="current"><a href="kayit.html">Kayıt Ol</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="form-container">
+            <h2>Hesap Oluştur</h2>
+            <form id="user-register">
+                <div class="form-group">
+                    <label for="register-name">Ad Soyad</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">E-posta</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-phone">Telefon</label>
+                    <input type="tel" id="register-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Şifre</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password-confirm">Şifre Tekrar</label>
+                    <input type="password" id="register-password-confirm" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-type">Kullanıcı Türü</label>
+                    <select id="user-type" required>
+                        <option value="customer">Müşteri</option>
+                        <option value="farmer">Çiftçi</option>
+                    </select>
+                </div>
+                <div id="farmer-fields" style="display:none;">
+                    <div class="form-group">
+                        <label for="farmer-city">Şehir</label>
+                        <select id="farmer-city">
+                            <!-- JavaScript ile şehirler eklenecek -->
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="button">Kayıt Ol</button>
+                <p>Zaten hesabınız var mı? <a href="login.html">Giriş Yapın</a></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hakkımızda</h3>
+                <p>Dijital Çiftçi Pazarı olarak çiftçilerimizle tüketicileri buluşturuyoruz.</p>
+                <button class="button" onclick="window.location.href='hakkimizda.html'">Daha Fazla Bilgi</button>
+            </div>
+            <div class="footer-section">
+                <h3>Çiftçi Misiniz?</h3>
+                <p>Ürünlerinizi satmak için platformumuza katılın.</p>
+                <button class="button" onclick="window.location.href='ciftci-kayit.html'">Çiftçi Kaydı</button>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Bize ulaşın: 220403001@hakkari.edu.tr</p>
+                <button class="button" onclick="window.location.href='iletisim.html'">İletişim Formu</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Dijital Çiftçi Pazarı &copy; 2025 - Tüm Hakları Saklıdır</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('user-type').addEventListener('change', function() {
+            const farmerFields = document.getElementById('farmer-fields');
+            farmerFields.style.display = this.value === 'farmer' ? 'block' : 'none';
+        });
+
+        document.getElementById('user-register').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const phone = document.getElementById('register-phone').value;
+            const password = document.getElementById('register-password').value;
+            const passwordConfirm = document.getElementById('register-password-confirm').value;
+            const type = document.getElementById('user-type').value;
+            
+            if (password !== passwordConfirm) {
+                alert('Şifreler eşleşmiyor!');
+                return;
+            }
+            
+            // In a real app, this would be sent to a server
+            const newUser = {
+                id: Date.now(),
+                name,
+                email,
+                phone,
+                password,
+                type,
+                createdAt: new Date().toISOString()
+            };
+            
+            if (type === 'farmer') {
+                newUser.city = document.getElementById('farmer-city').value;
+                newUser.verified = false;
+                newUser.products = [];
+            } else {
+                newUser.addresses = [];
+                newUser.favorites = [];
+            }
+            
+            // Add to database
+            if (!db.users) db.users = [];
+            db.users.push(newUser);
+            
+            alert('Kayıt başarılı! Giriş yapabilirsiniz.');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

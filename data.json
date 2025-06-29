@@ -1,0 +1,150 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@dijitalciftci.com",
+      "password": "admin123",
+      "phone": "+90 (555) 111 2233",
+      "type": "admin",
+      "createdAt": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Çiftçi Ahmet",
+      "email": "ahmet@ciftci.com",
+      "password": "ahmet123",
+      "phone": "+90 (555) 444 5566",
+      "type": "farmer",
+      "city": "Antalya",
+      "verified": true,
+      "products": [1, 6, 9],
+      "createdAt": "2025-01-15T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Kullanıcı Ayşe",
+      "email": "ayse@kullanici.com",
+      "password": "ayse123",
+      "phone": "+90 (555) 777 8899",
+      "type": "customer",
+      "addresses": [
+        {
+          "id": 1,
+          "title": "Ev Adresi",
+          "address": "Örnek Mah. Demo Sok. No:12 D:3",
+          "city": "İstanbul",
+          "district": "Beşiktaş",
+          "phone": "+90 (555) 777 8899"
+        }
+      ],
+      "favorites": [1, 3],
+      "createdAt": "2025-02-01T00:00:00Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Organik Domates",
+      "price": 12.99,
+      "category": "sebze",
+      "city": "Antalya",
+      "farmerId": 2,
+      "farmerName": "Çiftçi Ahmet",
+      "image": "images/products/tomatoes.jpg",
+      "stock": 50,
+      "description": "Tamamen organik yöntemlerle yetiştirilmiş domatesler",
+      "rating": 4.5,
+      "reviews": [
+        {
+          "userId": 3,
+          "userName": "Kullanıcı Ayşe",
+          "rating": 5,
+          "comment": "Çok lezzetli ve taze domatesler!",
+          "date": "2025-03-10T14:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Taze Süt",
+      "price": 8.50,
+      "category": "sut",
+      "city": "İzmir",
+      "farmerId": 4,
+      "farmerName": "Ege Mandıra",
+      "image": "images/products/milk.jpg",
+      "stock": 30,
+      "description": "Günlük taze süt",
+      "rating": 4.2,
+      "reviews": []
+    },
+    {
+      "id": 3,
+      "name": "Köy Yumurtası",
+      "price": 2.50,
+      "category": "sut",
+      "city": "Bursa",
+      "farmerId": 5,
+      "farmerName": "Mehmet Amca'nın Kümesi",
+      "image": "images/products/eggs.jpg",
+      "stock": 100,
+      "description": "Doğal köy yumurtası",
+      "rating": 4.7,
+      "reviews": []
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-1001",
+      "userId": 3,
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 2,
+          "price": 12.99
+        },
+        {
+          "productId": 3,
+          "quantity": 1,
+          "price": 2.50
+        }
+      ],
+      "total": 28.48,
+      "status": "completed",
+      "paymentMethod": "credit_card",
+      "shippingAddress": {
+        "title": "Ev Adresi",
+        "address": "Örnek Mah. Demo Sok. No:12 D:3",
+        "city": "İstanbul",
+        "district": "Beşiktaş",
+        "phone": "+90 (555) 777 8899"
+      },
+      "createdAt": "2025-03-05T10:15:00Z",
+      "updatedAt": "2025-03-07T14:30:00Z"
+    }
+  ],
+  "categories": [
+    {"id": "meyve", "name": "Meyve"},
+    {"id": "sebze", "name": "Sebze"},
+    {"id": "sut", "name": "Süt Ürünleri"},
+    {"id": "bakliyat", "name": "Bakliyat"},
+    {"id": "sifali-ot", "name": "Şifalı Otlar"}
+  ],
+  "cities": [
+    "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", 
+    "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", 
+    "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", 
+    "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", 
+    "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", 
+    "Hakkari", "Hatay", "Isparta", "Mersin", "İstanbul", "İzmir", 
+    "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", 
+    "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", 
+    "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", 
+    "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", 
+    "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", 
+    "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", 
+    "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", 
+    "Karabük", "Kilis", "Osmaniye", "Düzce"
+  ]
+}

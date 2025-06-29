@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Çiftçi Pazarı - Hakkımızda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Dijital</span> Çiftçi Pazarı</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li class="login-link"><a href="login.html">Giriş Yap</a></li>
+                    <li class="logout-link" style="display:none;"><a href="#" id="logout-btn">Çıkış Yap</a></li>
+                    <li class="farmer-link" style="display:none;"><a href="ciftci-panel.html">Çiftçi Paneli</a></li>
+                    <li class="admin-link" style="display:none;"><a href="admin-panel.html">Yönetim</a></li>
+                    <li class="current"><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li class="cart-icon">
+                        <a href="sepet.html">
+                            <img src="images/sepet.png" alt="Sepet">
+                            <span class="cart-count" style="display:none;">0</span>
+                        </a>
+                    </li>
+                    <li class="user-profile" style="display:none;">
+                        <a href="kullanici-panel.html">
+                            <img src="images/user.png" alt="Profil" class="user-avatar">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <h1>Hakkımızda</h1>
+        
+        <div class="about-section">
+            <h2>Biz Kimiz?</h2>
+            <p>Dijital Çiftçi Pazarı, çiftçilerimizle tüketicileri doğrudan buluşturan bir online platformdur. Amacımız, aracıları ortadan kaldırarak hem üreticilerin daha fazla kazanmasını hem de tüketicilerin daha uygun fiyata taze ve kaliteli ürünlere ulaşmasını sağlamaktır.</p>
+            
+            <h2>Vizyonumuz</h2>
+            <p>Türkiye'nin her köşesindeki üreticilerin ürünlerini tüm ülkeye ulaştırabileceği, şeffaf ve güvenilir bir pazar yeri oluşturmak.</p>
+            
+            <h2>Misyonumuz</h2>
+            <p>Yerel tarımı desteklemek, tüketicilere taze ve sağlıklı ürünler sunmak, tarım sektörünün dijitalleşmesine katkı sağlamak.</p>
+            
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ürünlerimiz</h3>
+                <p>Taze ve doğal ürünlerimizi keşfedin.</p>
+                <button class="button" onclick="window.location.href='urunler.html'">Ürünlere Göz At</button>
+            </div>
+            <div class="footer-section">
+                <h3>Çiftçi Misiniz?</h3>
+                <p>Ürünlerinizi satmak için platformumuza katılın.</p>
+                <button class="button" onclick="window.location.href='ciftci.html'">Çiftçi Girişi</button>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Bize ulaşın: 220403001@hakkari.edu.tr</p>
+                <button class="button" onclick="window.location.href='iletisim.html'">İletişim Formu</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Dijital Çiftçi Pazarı &copy; 2025 - Tüm Hakları Saklıdır</p>
+            <p>Emirhan Beyter - 220403001 | Ömer Demir</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
